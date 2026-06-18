@@ -1,0 +1,22 @@
+window-height = 30
+window-width = 100
+# fullscreen = true
+
+theme = London Soho Night calico's edit
+
+# background = #131311
+# background-opacity = 0.9
+# background-blur = true
+window-theme = ghostty
+# window-decoration = none
+
+font-size = 13
+font-family = Iosevka NF
+font-family-italic = Iosevka NF Italic
+font-family-bold-italic = Iosevka NF Bold Italic
+
+window-padding-balance = true
+window-padding-x = 4
+window-padding-y =4
+
+# scrollbar = never

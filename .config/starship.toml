@@ -1,0 +1,100 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+[█](fg:bright-white)\
+$shell\
+[](fg:bright-white bg:white)\
+[](fg:white bg:bright-black)\
+$directory\
+[█](fg:bright-black bg:black)\
+$git_branch\
+$git_status\
+$fill\
+$cmd_duration\
+[](fg:black bg:bright-black)\
+$username\
+[](fg:bright-black bg:white)\
+[](fg:white bg:bright-white)\
+$time\
+$os\
+[█](fg:bright-white)\
+$line_break\
+$character\
+"""
+
+[shell]
+disabled = false
+format = "[ $indicator ]($style)"
+style = "fg:bright-white bg:black inverted bold"
+bash_indicator = 'BASH'
+zsh_indicator = 'ZSH'
+fish_indicator = 'FISH'
+
+[directory]
+format = "[  $path]($style)"
+style = "fg:bright-white bg:bright-black"
+truncation_length = 3
+truncation_symbol = ".../"
+
+[git_branch]
+format = '[ $symbol$branch(:$remote_branch)]($style)'
+style = 'bg:black fg:bright-black bold'
+
+[git_status]
+format = '[ $all_status$ahead_behind]($style)'
+style = 'bg:black bold red'
+
+[fill]
+symbol = ' '
+style = 'bg:black'
+
+[cmd_duration]
+min_time = 1000
+show_milliseconds = false
+disabled = false
+format="[$duration ]($style)"
+style="bg:black fg:bright-black bold"
+
+[username]
+show_always = true
+style_user = "bg:bright-black"
+format = '[ $user ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "bg:black fg:bright-white inverted bold"
+format = '[ $time]($style)'
+
+[os]
+disabled = false
+format = "[ $symbol ]($style)"
+style = "bg:black fg:bright-white inverted bold"
+
+[os.symbols]
+Windows = ""
+Ubuntu = "󰕈"
+SUSE = ""
+Raspbian = "󰐿"
+Mint = "󰣭"
+Macos = "󰀵"
+Manjaro = ""
+Linux = "󰌽"
+Gentoo = "󰣨"
+Fedora = "󰣛"
+Alpine = ""
+Amazon = ""
+Android = ""
+AOSC = ""
+Arch = "󰣇"
+Artix = "󰣇"
+CentOS = ""
+Debian = "󰣚"
+Redhat = "󱄛"
+RedHatEnterprise = "󱄛"
+
+[character]
+success_symbol = '[󱞩](bold green)'
+error_symbol = '[󱞩](bold red)'

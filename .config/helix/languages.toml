@@ -1,0 +1,32 @@
+[language-server.angular-ls]
+command = "ngserver"
+
+args = [
+  "--ngProbeLocations",
+  "${$NODE_MODULES_GLOBAL}",
+  "--tsProbeLocations",
+  "${$NODE_MODULES_GLOBAL}",
+  "--stdio",
+  # If this for some reason doesn't work, try replacing ${NODE_MODULES_GLOBAL} with the absolute paths, e.g. output of `npm root -g`
+]
+
+
+file-types = ["ts", "typescript", "html"]
+
+[[language]]
+name = "typescript"
+language-servers = ["angular-ls", "typescript-language-server"]
+
+# [[language]]
+# name = "html"
+# language-servers = ["angular-ls", "vscode-html-language-server"]i
+
+[language-server.emmet-ls]
+command = "emmet-ls"
+args = ["--stdio"]
+
+[[language]]
+name = "html"
+auto-format = true
+language-servers = ["vscode-html-language-server", "emmet-ls"]
+formatter = { command = "prettier", args = ["--parser", "html"] }
